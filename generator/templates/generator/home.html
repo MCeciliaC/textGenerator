@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TEXT GENERATOR</title>
+    {% load static %} 
+
+    <!--CSS, BOOTSTRAP, JS, POPPER Y JQUERY -->
+      <link rel="stylesheet" href="{% static 'generator/css/style.css' %}">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- RESPONSIVE DESIGN -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="container col-12 mt-3">
+      <h3 class="container col-12 pl-5 pr-5">
+        <strong> TEXT GENERATOR </strong>
+        <a class="panel float-right" href="admin/">EDIT</a>
+      </h3>
+
+    <!-- DIV -->
+    <div class="left container col-sm-12 mb-3">
+      <div class="leftsup">
+      <form class="" action="" method="POST">
+      {% csrf_token %}
+      <input type="checkbox" id="greet" name="greet" value="hello">
+        <label for="greet">Saludo</label> <br><br>
+      {% for sel in selects %}
+      <h5>{{sel.name}} <br></h5>
+      <select class="container mb-5" name="sel">
+        <option value=""></option>
+        {%for question in questions %}
+        {% if sel == question.categories%}
+          <option value="{{question.text}}">{{question.title}}</option>  
+        {% endif %}
+        {%endfor%}
+      </select> 
+      {% endfor %}
+      <input type="checkbox" id="greet" name="greet2" value="hi">
+        <label for="greet">Saludo</label>          
+      </div>
+      <div class="inf container text-center button">
+        <button type="submit" name="send" class="sub btn btn-dark mb-1 ">GENERATE</button>
+      </div>
+      </form>
+    </div>
+
+    <!-- DIV -->
+    <div class="right container text-center col-sm-12 mb-5">
+    <!-- Superior -->
+    <textarea class="container col-12" id="probar">
+        {{hi}}
+        
+        {% for ph in paragraph%}{{ph}}
+        {% endfor%}
+        {{bye}}
+    </textarea>
+    <!-- Inferior -->
+    <div class="container inf">
+      <form  action="home.html" method="POST">
+        <button type="button" name="button" class="2 sub btn btn-dark mb-2 mt-1" id="copiar">COPY</button>
+        <button type="button" name="button" class="2 sub btn btn-dark mb-2 mt-1 ml-5" id="borrar">DELETE</button>
+      </form>
+    </div>
+    </div>
+
+    </div>
+
+  <script type="text/javascript">
+    const inpu = document.getElementById("probar");
+    const but = document.getElementById("copiar");
+    const del = document.getElementById("borrar");
+
+    but.onclick = function (){
+      inpu.select();
+      document.execCommand("copy");
+    };
+    del.onclick = function (){
+      inpu.select();
+      document.execCommand("delete");
+    };
+  </script>
+
+  </body>
+</html>

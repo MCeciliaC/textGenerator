@@ -1,0 +1,78 @@
+*{
+  font-family: BellMT;
+  color: rgba(10, 10, 50, 0.7);
+}
+
+a.panel {
+  color: rgba(10, 10, 50, 0.7) !important;
+}
+
+body {
+  background-color: #636363 !important;
+}
+
+div.left, div.right {
+
+  height: 85vh !important;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid;
+  display: block;
+  float: left;
+}
+div.right {
+  background-image:url('../img/bgr.jpg') !important;
+  display: block;
+  float:right;
+  width: 65vw !important;
+}
+
+div.left {
+  width: 30vw !important;
+  background-image:url('../img/bg.jpg') !important;
+}
+
+h3{
+  border-radius: 10px;
+  background-color: #c3d0ca;
+  padding: 2vh;
+  border: 1px solid;
+  margin-bottom: 2vh !important;
+}
+
+h4{
+  position: absolute;
+  bottom: 5px;
+  right: 10px ;
+}
+
+textarea#probar {
+  height: 65vh !important;
+  padding: 5vh;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: gray;
+  margin-bottom: 3vh;
+}
+
+div.leftsup {
+  height: 65vh;
+  padding: 5vh;
+  margin-bottom: 3vh;
+}
+
+div.inf {
+  height: 15vh;
+}
+
+button {
+  background-color: rgb(10, 10, 50, 0.8) !important;
+}
+
+select {
+  margin-bottom: 5vh!important;
+}
+div {
+  display: block
+}
