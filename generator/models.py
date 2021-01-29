@@ -18,8 +18,6 @@ class Question(models.Model):
     title= models.CharField(max_length=200)
     text= models.TextField()
     categories= models.ForeignKey(Select, on_delete=models.CASCADE)    
-    class Meta:
-        verbose_name= 'Pregunta'
     def __str__(self):
         return self.title
 
@@ -29,7 +27,6 @@ class Greeting(models.Model):
     afternoon=models.CharField(max_length=200)
     night=models.CharField(max_length=200)
     by= models.CharField(max_length=200)
-    class Meta:
-        verbose_name= 'Saludo'
+
     def __str__(self):
         return 'Saludos'

@@ -9,6 +9,7 @@ a.panel {
 
 body {
   background-color: #636363 !important;
+  
 }
 
 div.left, div.right {
@@ -29,15 +30,25 @@ div.right {
 
 div.left {
   width: 30vw !important;
-  background-image:url('../img/bg.jpg') !important;
+  background-image:url('../img/bgl.jpg') !important;
 }
 
+div.header {
+  
+}
 h3{
+  height: 10vh;
   border-radius: 10px;
   background-color: #c3d0ca;
-  padding: 2vh;
   border: 1px solid;
   margin-bottom: 2vh !important;
+}
+a {
+  margin-top:3vh;
+}
+img.logo {
+  height: 10vh;
+  transform: translate(-30px);
 }
 
 h4{

@@ -28,6 +28,6 @@ def home(request):
         #Selects
         paragraph = request.POST.getlist('sel')  
     
-
     return render(request, "generator/home.html", 
     {'selects':selects, 'questions':questions, 'hi':hi,'bye': bye, "paragraph":paragraph})
+
